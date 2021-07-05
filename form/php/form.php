@@ -11,6 +11,7 @@
     echo 'résultats : ';
     echo '<br>';
     echo '<br>';
+    echo '<br>';
     
     $rfesult = tourTournoi($tournoiTab, array_values($_POST));
     print_r($rfesult);

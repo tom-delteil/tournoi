@@ -60,6 +60,7 @@
             pr($listeJoueurs);
             
             while(count($listeJoueurs) > 1) {
+                echo "test";
                 
                 $resultatTour = array();
                 foreach ($listeJoueurs as $key => $value){
