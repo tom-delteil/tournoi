@@ -45,86 +45,52 @@
 
         }
         
-        function pr($data)
-        {
-            echo "<pre>";
-            print_r($data); // or var_dump($data);
-            echo "</pre>";
-        }
-        
-        
-        function tourTournoi(?array $resultatsTournois, array $listeJoueurs){
+
+         function realiserTournoi(?array $resultatsTournois, array $listeJoueurs) : array{
             
             $resultat = array();
+            $tabPerdant = array();
             array_push($resultat, $listeJoueurs);
-            pr($listeJoueurs);
+            Tools::pr($listeJoueurs);
+            
+            $tourNumber = 1;
             
             while(count($listeJoueurs) > 1) {
-                echo "test";
-                
+                Tools::pr('Tour : '. $tourNumber);
+               
                 $resultatTour = array();
-                foreach ($listeJoueurs as $key => $value){
+                for ($i = 0; $i < count($listeJoueurs); $i++){
                     
-                    if($key %2 === 0){
-                        $gagnant = jouerMatch($listeJoueurs[$key], $listeJoueurs[$key + 1]);
-                        array_push($resultatTour,$gagnant);
-                        // Search
-                        $pos = array_search($gagnant, $listeJoueurs);
+                $gagnant = jouerMatch($listeJoueurs[$i], $listeJoueurs[$i + 1]);
+                array_push($resultatTour,$gagnant);
+                
+                if($gagnant == $listeJoueurs [$i]){
+                    $perdant = $listeJoueurs [$i + 1];
+                } else {
+                    $perdant = $listeJoueurs [$i];
+                }
+                    
+                // Search
+                $pos = array_search($perdant, $listeJoueurs);
 
-                        echo 'gagnant found at: ' . $pos;
+                Tools::pr('perdant found at: ' . $pos);
 
-                        // Remove from array
-                        unset($listeJoueurs[$pos]);
-                        $listeJoueurs = array_values($listeJoueurs);
-                        pr($listeJoueurs);
-                    }
+                // Remove from array
+                unset($listeJoueurs[$pos]);
+                $listeJoueurs = array_values($listeJoueurs);
+//                pr($listeJoueurs);
+                
                 }
                 array_push($resultat,$resultatTour);
-                
+                $tourNumber++;
             }
+//            pr($resultat);
             return $resultat;
                 
         }  
-            
-//            if(sizeof($listeJoueurs) == 1){ 
-//                var_dump($resultatsTournois);
-//                return $resultatsTournois;
-//            }
-//            
-//            $resultatTour = array();
-//            
-//            foreach ($listeJoueurs as $key => $value){
-//                if($key %2 == 0){
-//                    $gagnant = jouerMatch($listeJoueurs[$key], $listeJoueurs[$key + 1]);
-//                    array_push($resultatTour,$gagnant);
-//                }
-//                
-//            }
-//
-//            array_push($resultatsTournois, $resultatTour);
-//            tourTournoi($resultatsTournois, $resultatTour);
-//        }
+
         
-//        function test($boxTableau){
-//             $testTableau = array(1, 2, 3); 
-//            array_push($boxTableau, $testTableau);
-//            if(sizeof(test($boxTableau) == 10)){
-//                          
-//                return $boxTableau;
-//            }
-//            else{
-//             test($testTableau);
-//                return;
-//            }
-//        }
-//         
-//        $box = array();
-//        echo '<br>';
-//        $result = test($box);
-//        print_r($result);
-
-         
-
+        
     ?>
 </body>
 </html>
