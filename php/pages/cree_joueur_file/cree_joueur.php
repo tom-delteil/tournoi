@@ -17,32 +17,45 @@
             
             //connexion bdd + exectution de la requete avec un paramètre
             $bdd = new PDO('mysql:host=localhost;dbname=bdd_tournoi', 'root', 'root'); 
-            $requete = $bdd->prepare("SELECT * FROM competiteur WHERE `tournoi_id`=:id");
-            $requete->bindParam(':id', $id, PDO::PARAM_INT);
-            $requete->execute();
+            $select = $bdd->prepare("SELECT * FROM competiteur WHERE `tournoi_id`=:id");
+            $select->bindParam(':id', $id, PDO::PARAM_INT);
+            $select->execute();
 //            $requete->debugDumpParams();
             
 //            print_r($requete->fetch(PDO::FETCH_ASSOC));
-           $result = $requete->fetchAll();
+           $result = $select->fetchAll();
 //           Tools::pr($result);
+//            
+//            while ($row = $requete->fetch(PDO::FETCH_ASSOC)){
+//                echo '<p>'.$row['name'].'</p>';
+//            }
             
-            while ($row = $requete->fetch(PDO::FETCH_ASSOC)){
-                echo '<p>'.$row['name'].'</p>';
-            }
+            
         ?>
         
-        <form action="../form_condition.php" method="post">
+        <form action="../playerbdd.php" method="post">
+        <!--<form action="<?php // echo "#?tournoi_id=".$row['id'];?>" method="post">-->
 
-            <div><input type="text" name="name-1" value="<?php echo $result[0]['name'];?>"></div>
-            <div><input type="text" name="name-2" value="<?php echo $result[1]['name'];?>"></div>
-            <div><input type="text" name="name-3" value="<?php echo $result[2]['name'];?>"></div>
-            <div><input type="text" name="name-4" value="<?php echo $result[3]['name'];?>"></div>
-            <div><input type="text" name="name-5" value="<?php echo $result[4]['name'];?>"></div>
-            <div><input type="text" name="name-6" value="<?php echo $result[5]['name'];?>"></div>
-            <div><input type="text" name="name-7" value="<?php echo $result[6]['name'];?>"></div>
-            <div><input type="text" name="name-8" value="<?php echo $result[7]['name'];?>"></div>
-            <div><input type="submit"></div>
-        
+
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[0])){ echo $result[0]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[1])){ echo $result[1]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[2])){ echo $result[2]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[3])){ echo $result[3]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[4])){ echo $result[4]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[5])){ echo $result[5]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[6])){ echo $result[6]['name'];};?>"></div>
+            <div><input type="text" name="playerName[]" value="<?php if(isset($result[7])){ echo $result[7]['name'];};?>"></div>
+            <div><input type="hidden" name="tournoi_id" value="<?php echo $id;?>"></div>  
+            <div><input type="hidden" name="update" value="
+                <?php 
+                if(isset($result[0])){ 
+                    echo "true";
+                } else { 
+                    echo "false";
+                } 
+                ?>
+                        "></div>  
+            <div><input type="submit" value="sauvegarder ou mettre à jour"></div>        
         </form>
     </body>
 </html>
