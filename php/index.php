@@ -12,21 +12,21 @@ and open the template in the editor.
         
     </head>
     <body>
-        <form action="form/php/form_tournoi.php" method="post">
+        <form action="pages/form_tournoi.php" method="post">
 
             <div><input type="text" name="name-tournoi"></div>
             <div><input type="submit"></div>
         
         </form>
         <?php
-            require "tools.php";
+//            require "tools.php";
             $bdd = new PDO('mysql:host=localhost;dbname=bdd_tournoi', 'root', 'root'); 
-            $requete = $bdd->prepare('SELECT * FROM tournoi');
-            $result = $requete->execute();
-            while ($row = $requete->fetch(PDO::FETCH_ASSOC))
+            $select = $bdd->prepare('SELECT * FROM tournoi');
+            $result = $select->execute();
+            while ($row = $select->fetch(PDO::FETCH_ASSOC))
             {
 //                Tools::pr($row);
-                echo '<p>'.$row['name'].'</p>';
+                echo '<a href = pages/cree_joueur_file/cree_joueur.php?tournoi_id='.$row['id'].'>'.$row['name'].'</a>'.'<br>';
             }
         ?>
         

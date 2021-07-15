@@ -30,18 +30,8 @@
        }
 
     }
-        
-        
-        
-        
-        
-//        while ($name = $requete->fetch(PDO::FETCH_ASSOC))
-//            {
-////                Tools::pr($row);
-//                echo '<p>'.$name['name'].'</p>'.'<br>';
-//            }
-//      header("Refresh:0; url=cree_joueur_file/cree_joueur.php");
-        header("Refresh:0; url=cree_joueur_file/cree_joueur.php?tournoi_id=".$_POST['tournoi_id']);        
+               
+    header("Refresh:0; url=cree_joueur_file/cree_joueur.php?tournoi_id=".$_POST['tournoi_id']);        
 ?>
  
 
