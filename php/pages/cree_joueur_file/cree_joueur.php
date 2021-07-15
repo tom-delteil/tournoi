@@ -117,9 +117,9 @@ if (isset($result[0])) {
 
                 <li class="spacer">&nbsp;</li>
 
-                <li class="game game-top winner"></li>
+                <li id="player3" class="game game-top winner"></li>
                 <li class="game game-spacer">&nbsp;</li>
-                <li class="game game-bottom "></li>
+                <li id="player4" class="game game-bottom "></li>
                 
                 <li class="spacer">&nbsp;</li>
                
