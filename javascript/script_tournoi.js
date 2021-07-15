@@ -1,7 +1,7 @@
 
 function tirerAuSort(){
       
-    var forms = document.getElementById("playerForms");
+   var forms = document.getElementById("playerForms");
    var inputs = forms.getElementsByTagName("input");
    var results = [];
    for (index = 0; index < inputs.length; ++index) {
@@ -21,7 +21,7 @@ function tirerAuSort(){
     console.log(round_1);
     
    let player_1 = document.querySelector("#player-1");
-   player_1.innerHTML = results[0] + '<span><input type="number" min="0" max="99" onchange="comparateurScore(#player-2>span")"></input></span>';
+   player_1.innerHTML = results[0] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-2>span>input\")'></input></span>";
    let player_2 = document.querySelector("#player-2");
    player_2.innerHTML = results[1] + '<span><input type="number" min="0" max="99"></input></span>';
    let player_3 = document.querySelector("#player-3");
@@ -39,14 +39,22 @@ function tirerAuSort(){
    
 }
 
-function comparateurScore(){
-    console.log ("test");
-    if ("#player-1>span">"#player-2>span"){
-        let player1 = document.querySelector("#player1");
-        player1.innerHTML = results[0];
+function comparateurScore(input,selecteur){
+    
+    let inputToCompare = document.querySelector(selecteur);
+    console.log(inputToCompare);
+    console.log(input.value);
+    console.log(inputToCompare.value);
+    
+    if (input.value >inputToCompare.value){
+        console.log("test");
+        let player1 = document.getElementById("player1");
+        player1.innerHTML = input.parentElement.parentElement.innerText;
 
     } else {
-        player1.innerHTML = results[1];
+        console.log("autre");
+        let player1 = document.getElementById("player1");
+        player1.innerHTML = inputToCompare.parentElement.parentElement.innerText;
     }
 }
 
