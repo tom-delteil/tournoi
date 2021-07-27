@@ -10,32 +10,32 @@ function tirerAuSort(){
 
     }
     
-   var tour = document.getElementById("premier_tour");
+   let tour = document.getElementById("premier_tour");
    shuffle(results);
    results.forEach(function(result){
 
     });
     
     let round = document.querySelector("#round-1");
-    let round_1 = document.querySelector("#round-1>li.game-top");
+    let round_1 = document.querySelector("#round-1>li.game-top>span.allPlayer");
     console.log(round_1);
     
    let player_1 = document.querySelector("#player-1");
-   player_1.innerHTML = results[0] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-2>span>input\", \"player1\")'></input></span>";
+   player_1.innerHTML = results[0];
    let player_2 = document.querySelector("#player-2");
-   player_2.innerHTML = results[1] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-1>span>input\", \"player1\")'></input></span>";
+   player_2.innerHTML = results[1];
    let player_3 = document.querySelector("#player-3");
-   player_3.innerHTML = results[2] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-4>span>input\", \"player2\")'></input></span>";
+   player_3.innerHTML = results[2];
    let player_4 = document.querySelector("#player-4");
-   player_4.innerHTML = results[3] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-3>span>input\", \"player2\")'></input></span>";
+   player_4.innerHTML = results[3];
    let player_5 = document.querySelector("#player-5");
-   player_5.innerHTML = results[4] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-6>span>input\", \"player3\")'></input></span>";
+   player_5.innerHTML = results[4];
    let player_6 = document.querySelector("#player-6");
-   player_6.innerHTML = results[5] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-5>span>input\", \"player3\")'></input></span>";
+   player_6.innerHTML = results[5];
    let player_7 = document.querySelector("#player-7");
-   player_7.innerHTML = results[6] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-8>span>input\", \"player4\")'></input></span>";
+   player_7.innerHTML = results[6];
    let player_8 = document.querySelector("#player-8");
-   player_8.innerHTML = results[7] + "<span><input type='number' min='0' max='99' onchange='comparateurScore(this, \"#player-7>span>input\", \"player4\")'></input></span>";
+   player_8.innerHTML = results[7];
    
 }
 
@@ -49,12 +49,12 @@ function comparateurScore(input,selecteur, destinationId){
     if (input.value >inputToCompare.value){
 //        console.log("test");
         let player1 = document.getElementById(destinationId);
-        player1.innerHTML = input.parentElement.parentElement.innerText;
+        player1.innerText = input.parentElement.innerText;
 
     } else {
 //        console.log("autre");
         let player1 = document.getElementById(destinationId);
-        player1.innerHTML = inputToCompare.parentElement.parentElement.innerText;
+        player1.innerText = inputToCompare.parentElement.innerText;
     }
     
 }

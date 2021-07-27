@@ -39,7 +39,7 @@ li.game{
   li.game.winner{
     font-weight:bold;
   }
-  li.game span{
+  li.game input{
     float:right;
     margin-right:5px;
   }
