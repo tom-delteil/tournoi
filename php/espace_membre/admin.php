@@ -13,11 +13,20 @@
     <body>
         <h1>Bonjour ! <?php echo $_SESSION['user']; ?></h1>
         <button><a href="deconnexion.php">Déconnexion</a></button>
-        <table id="utilisateur">
+        <table id="utilisateur" class="display" style="width:100%">
             <thead>
                 <tr>
-                    <th>Nom</th>
                     <th>Rôle</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Télephone</th>
+                    <th>Email</th>
+                    <th>Date de naissance</th>
+                    <th>Poids</th>
+                    <th>Sexe</th>
+                    <th>Adresse</th>
+                    <th>Code Postale</th>
+                    <th>Ville</th>
                 </tr>
             </thead>
         </table>
