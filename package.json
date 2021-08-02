@@ -1,0 +1,23 @@
+{
+  "name": "tournoi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tom-delteil@github.com/tom-delteil/tournoi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tom-delteil/tournoi/issues"
+  },
+  "homepage": "https://github.com/tom-delteil/tournoi#readme",
+  "dependencies": {
+    "fullcalendar": "^5.9.0"
+  }
+}
