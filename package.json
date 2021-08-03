@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/tom-delteil/tournoi#readme",
   "dependencies": {
-    "fullcalendar": "^5.9.0"
+    "bootstrap": "^5.0.2",
+    "datatables.net": "^1.10.25",
+    "datatables.net-dt": "^1.1.0",
+    "fullcalendar": "^5.9.0",
+    "jquery": "^3.6.0"
   }
 }

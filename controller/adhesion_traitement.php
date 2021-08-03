@@ -1,6 +1,6 @@
 <?php
 
-require_once '/CRM_MMA/config.php';
+require_once 'config.php';
 
 if(isset($_POST['mail']) && isset($_POST['password'])){
     $name = htmlspecialchars($_POST['name']);
@@ -42,18 +42,18 @@ if(isset($_POST['mail']) && isset($_POST['password'])){
                        'town' => $town,
                        'password' => $password
                     ));
-                    header('location:adhesion.php?reg_err=success');
+                    header('location:/CRM_MMA/view/php/adhesion.php?reg_err=success');
                 } else {
-                    header('location: adhesion.php?reg_err=password');
+                    header('location: /CRM_MMA/view/php/adhesion.php?reg_err=password');
                 }
             } else {
-                header('location: adhesion.php?reg_err=mail');
+                header('location: /CRM_MMA/view/php/adhesion.php?reg_err=mail');
             }
         } else {
-            header('location: adhesion.php?reg_err=mail_length');
+            header('location: /CRM_MMA/view/php/adhesion.php?reg_err=mail_length');
         }
     } else {
-        header('location: adhesion.php?reg_err=already');
+        header('location: /CRM_MMA/view/php/adhesion.php?reg_err=already');
     }
 }
 

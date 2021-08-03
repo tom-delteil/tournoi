@@ -1,6 +1,6 @@
 <?php
 
-require "compet_controller.php";
+require "/CRM_MMA/controller/compet_controller.php";
 
 $bdd = new PDO('mysql:host=localhost;dbname=bdd_tournoi', 'root', 'root'); 
 $select = $bdd->prepare("SELECT * FROM competiteur WHERE `tournoi_id`=:id");

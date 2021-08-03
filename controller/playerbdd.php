@@ -1,7 +1,7 @@
 <?php
 
-    require "joueur.php";
-    require 'tools.php';
+    require "/CRM_MMA/controller/joueur.php";
+    require '/CRM_MMA/controller/tools.php';
 //    require "form.php";
 
     $bdd = new PDO('mysql:host=localhost;dbname=bdd_tournoi', 'root', 'root'); 
@@ -31,7 +31,7 @@
 
     }
                
-    header("Refresh:0; url=cree_joueur_file/cree_joueur.php?tournoi_id=".$_POST['tournoi_id']);        
+    header("Refresh:0; url=CRM_MMA/view/html/cree_joueur.php?tournoi_id=".$_POST['tournoi_id']);        
 ?>
  
 

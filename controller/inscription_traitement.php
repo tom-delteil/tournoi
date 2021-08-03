@@ -3,15 +3,15 @@
 require_once 'config.php';
 
 if ($_POST['email'] === "" && $_POST['password'] === "") {
-    header('location:inscription.php?form_empty=1');
+    header('location:/CRM_MMA/view/php/inscription.php?form_empty=1');
     die();
 }
 if ($_POST['email'] === "") {
-    header('location:inscription.php?form_empty=2');
+    header('location:/CRM_MMA/view/php/inscription.php?form_empty=2');
     die();
 }
 if ($_POST['password'] === "") {
-    header('location:inscription.php?form_empty=3');
+    header('location:/CRM_MMA/view/php/inscription.php?form_empty=3');
     die();
 }
     
@@ -27,23 +27,23 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_
     $row = $check->rowCount();
     
     if($row !== 0){
-        header('location: inscription.php?reg_err=already');
+        header('location: /CRM_MMA/view/php/inscription.php?reg_err=already');
         die();
     }
     if(strlen($email) >= 100){
-        header('location: inscription.php?reg_err=mail_length');
+        header('location: /CRM_MMA/view/php/inscription.php?reg_err=mail_length');
         die();
     }
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
         echo '...';
 //        die();
     } else {
-        header('location: inscription.php?reg_err=mail');
+        header('location: /CRM_MMA/view/php/inscription.php?reg_err=mail');
         die();
     }
     if($password !== $confirm_mdp){ 
         echo 'password';
-        header('location: inscription.php?reg_err=password');
+        header('location: /CRM_MMA/view/php/inscription.php?reg_err=password');
         die();
     }
     $password = hash('sha256', $password);
@@ -53,7 +53,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_
        'mail' => $email,
        'password' => $password
     ));
-    header('location:inscription.php?reg_err=success');
+    header('location:/CRM_MMA/view/php/inscription.php?reg_err=success');
 
 }
 
@@ -81,17 +81,17 @@ if(isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_
 //                       'mail' => $email,
 //                       'password' => $password
 //                    ));
-//                    header('location:inscription.php?reg_err=success');
+//                    header('location:/CRM_MMA/view/php/inscription.php?reg_err=success');
 //                } else {
-//                    header('location: inscription.php?reg_err=password');
+//                    header('location: /CRM_MMA/view/php/inscription.php?reg_err=password');
 //                }
 //            } else {
-//                header('location: inscription.php?reg_err=mail');
+//                header('location: /CRM_MMA/view/php/inscription.php?reg_err=mail');
 //            }
 //        } else {
-//            header('location: inscription.php?reg_err=mail_length');
+//            header('location: /CRM_MMA/view/php/inscription.php?reg_err=mail_length');
 //        }
 //    } else {
-//        header('location: inscription.php?reg_err=already');
+//        header('location: /CRM_MMA/view/php/inscription.php?reg_err=already');
 //    }
 //}

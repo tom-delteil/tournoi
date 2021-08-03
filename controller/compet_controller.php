@@ -1,6 +1,6 @@
 
     <?php
-        require "tools.php";
+        require "/CRM_MMA/controller/tools.php";
 
 //        $maPoul = creeJoueurs(8);
 //        echo 'joueurs : ';

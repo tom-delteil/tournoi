@@ -1,5 +1,5 @@
 <?php
-require_once '../espace_membre/config.php';
+require_once '../../controller/config.php';
 
 $request = file_get_contents("users.sql");
 $check = $bdd->prepare($request);

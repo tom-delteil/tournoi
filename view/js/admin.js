@@ -2,7 +2,7 @@ $(document).ready( function () {
     $('#utilisateur').DataTable({
 //        "serverSide": true,
 //           scrollY: 400,
-        "ajax": "http://localhost:8888/tournoi/php/api/getUser.php",
+        "ajax": "http://localhost:8888/CRM_MMA/model/api/getUser.php",
         "columns": [
             { "data": "Role" },
             { "data": "Nom" },
@@ -14,8 +14,11 @@ $(document).ready( function () {
             { "data": "Sexe" },
             { "data": "Adresse" },
             { "data": "Code postal" },
-            { "data": "Ville" },
+            { "data": "Ville" }
         ]
     });
+    
 } );
+
+
 

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/CRM_MMA/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="container mt-5">
@@ -67,7 +67,7 @@
 //                break;
         }
         ?>
-            <form action="inscription_traitement.php" method="post" class="row g-3 needs-validation"
+            <form action="/CRM_MMA/controller/inscription_traitement.php" method="post" class="row g-3 needs-validation"
                   oninput='up2.setCustomValidity(confirm_mdp.value != password.value ? "Passwords do not match." : "")'>
                 <div class="col-md-8">
                     <label for="email" class="form-label" >email</label>
@@ -84,7 +84,7 @@
                 <div class="col-12">
                     <input type="submit" value="s'inscrire" class="btn btn-primary">
                 </div>
-                <p><a href="index.php">Connexion</a></p>
+                <p><a href="/CRM_MMA/view/php/index_connexion.php">Connexion</a></p>
             </form>
         </div>
     </body>

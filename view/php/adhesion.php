@@ -38,13 +38,12 @@ if (isset($_GET['reg_err'])) {
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <title>Mon compte</title>
 </head>
 <body>
     <div class="container mt-5">
-        <form action="adhesion_traitement.php" method="post" name="adhesion" class="row g-3 needs-validation">
+        <form action="/CRM_MMA/controller/adhesion_traitement.php" method="post" name="adhesion" class="row g-3 needs-validation">
             <div class="col-md-6">
                 <label for="name" >nom</label>
                 <input id="name" class="form-control"" type="text"  name="name">
@@ -92,7 +91,7 @@ if (isset($_GET['reg_err'])) {
             <div class="col-md-12">
                 <input type="submit" value="s'inscrire" class="btn btn-primary">
             </div>
-            <p><a href="landing.php" class="btn btn-primary my-3">Retour</a></p>
+            <p><a href="/CRM_MMA/view/php/landing.php" class="btn btn-primary my-3">Retour</a></p>
         </form>
     </div>
 </body>

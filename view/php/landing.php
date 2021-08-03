@@ -1,6 +1,6 @@
 <?php
-   require_once 'checkSession.php';
-   require_once 'config.php';
+   require_once '../../controller/checkSession.php';
+   require_once '../../controller/config.php';
    
    $email = $_SESSION['user'];
    $check = $bdd->prepare('SELECT * FROM utilisateur WHERE mail = ?;');
@@ -23,7 +23,7 @@
         <main>
             <div class="container-fluid mt-5">
                 <h1>Bonjour ! <?php echo $_SESSION['user']; ?></h1>
-                <a href="deconnexion.php" class="btn btn-primary my-3">Déconnexion</a>
+                <a href="/CRM_MMA/controller/deconnexion.php" class="btn btn-primary my-3">Déconnexion</a>
                 <div class=" align-items-start col-2">
                     <h3>Mes informations</h3>
                     <form class="row g-3 needs-validation">
@@ -49,9 +49,9 @@
                 </div>
                 <?php
                 if (isset($data[0])) {
-                    echo '<a href="adhesion.php" class="btn btn-primary my-3">Modifiez mes informations</a>';
+                    echo '<a href="/CRM_MMA/view/php/adhesion.php" class="btn btn-primary my-3">Modifiez mes informations</a>';
                 } else {
-                    echo '<a href="adhesion.php" class="btn btn-primary my-3">Devenir adhérent</a>';
+                    echo '<a href="/CRM_MMA/view/php/adhesion.php" class="btn btn-primary my-3">Devenir adhérent</a>';
                 }
                 ?>
             </div>

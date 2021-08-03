@@ -1,7 +1,7 @@
 
 <?php
     
-    require "compet_controller.php";
+    require "/CRM_MMA/controller/compet_controller.php";
 
     $mesJoueurs = array_values($_POST);
     Tools::pr($mesJoueurs);

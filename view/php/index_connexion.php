@@ -7,12 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+        <script type="text/javascript" src="/CRM_MMA/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="container mt-5 start-0">
             <h1>Connexion</h1>
-                <form action="connexion.php" method="post"class="row g-3 needs-validation" >
+                <form action="/CRM_MMA/controller/connexion.php" method="post"class="row g-3 needs-validation" >
                 <div class="col-md-6">
                     <label for="email" class="form-label">email</label>
                     <input id="email" type="email" name="email" class="form-control" required="true">
@@ -43,7 +43,7 @@
                             break;
                     }
                 ?>
-                <p><a href="inscription.php">Inscription</a></p>
+                <p><a href="/CRM_MMA/view/php/inscription.php">Inscription</a></p>
             </form>
         </div>
     </body>

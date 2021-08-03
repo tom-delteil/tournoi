@@ -8,5 +8,5 @@
     $select->execute();
     $insert = $bdd->prepare ('INSERT INTO `tournoi` (`id`, `name`) VALUES (NULL, ?)');
     $insert->execute(array($mesTournois[0]));
-    header("Refresh:0; url=../index.php");
+    header("Refresh:0; url=/CRM_MMA/view/html/index_tournoi.php");
 ?>
