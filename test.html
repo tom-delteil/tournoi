@@ -7,16 +7,21 @@ and open the template in the editor.
 <html>
     <head>
         <title>Test</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="/CRM_MMA/lib/fullcalendar-5.9.0/lib/main.min.css">
-        <script type="text/javascript" src="/CRM_MMA/lib/fullcalendar-5.9.0/lib/main.min.js"></script>
-        <script type="text/javascript" src="/CRM_MMA/view/js/adminCallendar.js"></script>    
-        
+        <script type="text/javascript" src="/CRM_MMA/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/CRM_MMA/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="/CRM_MMA/node_modules/fullcalendar/main.min.js"></script>
+        <script type="text/module" src="/CRM_MMA/view/js/adminCallendar.js"></script>     
+
+        <link rel="stylesheet" href="/CRM_MMA/node_modules/bootstrap/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="/CRM_MMA/node_modules/fullcalendar/main.css">
     </head>
     <body>
-        <!--<h1>hi !</h1>-->
-        <div id='calendar'></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5 mb-5">
+                    <div id='calendar' class="mt-3"></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
